@@ -7,6 +7,23 @@ import { AddFriendsComponent } from './add-friends/add-friends.component';
 import { SearchFriendsComponent } from './search-friends/search-friends.component';
 import { ViewAllFriendsComponent } from './view-all-friends/view-all-friends.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const myRoute:Routes =[
+  {
+    path:"add",
+    component : AddFriendsComponent
+  },
+  {
+    path :"viewall",
+    component : ViewAllFriendsComponent
+  },
+  {
+    path:"search",
+    component: SearchFriendsComponent
+  }
+
+]
 
 @NgModule({
   declarations: [
@@ -18,7 +35,8 @@ import { NavigationComponent } from './navigation/navigation.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
